@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "98a0059b-6435-414e-8a4b-20b02648b16d",
+		"name": "spring-boot-webflux-apirest-functional_endpoints-router_function",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9037494"
+	},
+	"item": [
+		{
+			"name": "RestController",
+			"item": [
+				{
+					"name": "Get Products V1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/v1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/v2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/v3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"v3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product {id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/68c04c552c15bd0ab4b7bb98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"68c04c552c15bd0ab4b7bb98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product V1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"kevin\",\n   \"price\": 99.9\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/v1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product V2 \"uploading picture\"",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/aufwa/Downloads/raspberry.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Kevin",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "category.id",
+									"value": "68bf1f2c055daf9ebd70100c",
+									"type": "text"
+								},
+								{
+									"key": "category.name",
+									"value": "Informatic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/v2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Product Picture {id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/aufwa/Downloads/raspberry.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/upload/68c03b2a4679d8208a029129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"upload",
+								"68c03b2a4679d8208a029129"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product {id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"68bf15192a842b0e6dc2fcfd\",\n        \"name\": \"Kevin Sweet Software\",\n        \"price\": 999.0,\n        \"createAt\": \"2025-09-08T17:40:41.930+00:00\",\n        \"category\": {\n            \"id\": \"68bf15192a842b0e6dc2fcf8\",\n            \"name\": \"Informatic\"\n        },\n        \"picture\": null\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/68c04c552c15bd0ab4b7bb98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"68c04c552c15bd0ab4b7bb98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product {id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/68c03b2a4679d8208a029129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"68c03b2a4679d8208a029129"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FunctionalEndpoints & RouterFunction",
+			"item": [
+				{
+					"name": "Get Prducts V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/product/v1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"product",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V2 (Alias)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/test/product/v5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"test",
+								"product",
+								"v5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v3/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v3",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V3 (Alias)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v3/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v3",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products V4 (Alias)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v4/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product {id} V4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product/68c4900e9b0f85096ddb2496",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product",
+								"68c4900e9b0f85096ddb2496"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product {id} V4 (Alias)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product/get/68c47e301d6675680cfde918",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product",
+								"get",
+								"68c47e301d6675680cfde918"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product V4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kevin Sweet Software\",\n    \"price\": 999.0,\n    \"category\": {\n        \"id\": \"68c48700d742a098fb847fe5\",\n        \"name\": \"Informatic\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product V4",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                    \"name\": \"Baldur\",\n                    \"price\": 69.0,\n                    \"createAt\": \"2025-09-08T17:40:41.930+00:00\",\n                    \"category\": {\n                        \"id\": \"68c492dd7a4389bbbd301449\",\n                        \"name\": \"Informatic\"\n                    },\n                    \"picture\": null\n                }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product/68c498dee997d9a57dd5e053",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product",
+								"68c498dee997d9a57dd5e053"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product {id} V4",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product/68c494497a4389bbbd30146b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product",
+								"68c494497a4389bbbd30146b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create and Upload Product Picture V4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileName",
+									"type": "file",
+									"src": "/C:/Users/aufwa/Downloads/raspberry.jpg"
+								},
+								{
+									"key": "name",
+									"value": "kevin",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "155000.99",
+									"type": "text"
+								},
+								{
+									"key": "category.id",
+									"value": "68c4a4a7bc5578d874ced6f5",
+									"type": "text"
+								},
+								{
+									"key": "category.name",
+									"value": "Informatic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v4/product/create_and_upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v4",
+								"product",
+								"create_and_upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
